@@ -1,0 +1,346 @@
+:root{
+  --negro:#121212;
+  --blanco-gris:#E5E5E5;
+  --dorado:#D4AF37;
+}
+
+body,div,li,ul,a,p,span{
+  margin:0 ;
+  padding: 0;
+}
+
+body{
+  background-color: var(--negro);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.logo-contenedor{
+margin-top:40px;
+margin-left: 150px;
+}
+
+.logo-nombre{
+  color: var(--dorado);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin-top: -44px;
+  margin-left: 200px;
+}
+
+.menu{
+display: none;
+}
+
+.ul-nav{
+  display: flex;
+  gap: 40px;
+  justify-content: flex-end;
+  margin-right: 200px;
+  margin-top: -25px;
+}
+
+.principal{
+animation: aparecer 1s;
+}
+
+.link{
+  color: var(--blanco-gris);
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.link:hover{
+color: var(--dorado);
+}
+
+li{
+  list-style: none;
+}
+
+.link-boton{
+  padding: 10px;
+  background-color: var(--dorado);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius:6px ;
+  border: 1px solid var(--dorado);
+  transition: .3s;
+}
+
+.link-boton:hover{
+background-color: transparent;
+border: 1px solid var(--dorado);
+color: var(--dorado);
+}
+
+h2{
+color: var(--blanco-gris);
+font-size: 60px;
+margin-top: -400px;
+margin-left: 200px;
+animation: left-to-right 1s;
+}
+
+h1{
+color: var(--dorado);
+font-size: 60px;
+margin-left: 200px;
+animation: left-to-right 1s;
+}
+
+.foto-contenedor{
+display: flex;
+justify-content: flex-end;
+margin-top: 170px;
+margin-right: 200px;
+}
+
+.foto-contenedor img {
+height: 550px;
+width: 550px;
+object-fit: cover;
+-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+animation: bottom-to-top 1s;
+}
+
+.signo{
+color: var(--dorado);
+font-size: 30px;
+}
+
+.social-contenedor {
+display: flex;
+gap: 20px;
+align-items: center;
+margin-left: 210px;
+margin-top: 30px;
+animation: left-to-right 1s;
+}
+
+.social-link:hover{
+animation: rotar 1s;
+}
+
+/* responsive section*/
+
+@media (max-width:930px) {
+.menu-contenedor{
+  display: flex;
+  justify-content: center;
+}
+
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: -34px;
+  margin-right: 0px;
+}
+
+.ul-nav{
+  display: none;
+}
+
+.logo-nombre{
+margin-left: 80px;
+margin-top: -85px;
+}
+.logo-contenedor{
+margin: 40px;
+}
+
+
+h2{
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 40px;
+margin-left: 0px;
+}
+
+h1{
+font-size: 37px;
+text-align: center;
+margin-left: 0px;
+}
+
+.foto-contenedor{
+margin-top: 400px;
+display: flex;
+justify-content: center;
+}
+
+.foto-contenedor img{
+width: 400px;
+height: 400px;
+}
+.social-contenedor{
+display: flex;
+justify-content: flex-start;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+/* animaciones */
+
+@keyframes aparecer {
+from{
+  opacity: 0;
+}
+
+to{
+  opacity: 1;
+}
+}
+
+@keyframes left-to-right {
+from{
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+to{
+  opacity: 1;
+}
+}
+
+@keyframes bottom-to-top {
+from{
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+to{
+  opacity: 1;
+}
+}
+
+@keyframes rotar {
+from{
+  transform:rotate(0deg);
+}
+
+to{
+  transform:rotate(360deg);
+}
+}
+
+
+/* fondo */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box !important;
+}
+
+html,body{
+  height: 100%;
+}
+
+body {
+display: table;
+width: 100%;
+height: 100%;
+background-color: #171717;
+background-position: center;
+color: #000;
+line-height: 1.6;
+position: relative;
+font-family: sans-serif;
+overflow: hidden;
+}
+
+.lines, .lines .line {
+pointer-events: none;
+}
+
+.lines {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 100%;
+margin: auto;
+width: 90vw;
+}
+.lines .line {
+position: absolute;
+width: 1px;
+height: 100%;
+top: 0;
+left: 50%;
+background: rgba(255, 255, 255, 0.1);
+overflow: hidden;
+}
+.lines .line::after {
+content: "";
+display: block;
+position: absolute;
+height: 15vh;
+width: 100%;
+top: -50%;
+left: 0;
+background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(75%, #ffffff), to(#ffffff));
+background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+-webkit-animation: run 7s 0s infinite;
+        animation: run 7s 0s infinite;
+-webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+-webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+        animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+.lines .line:nth-child(1) {
+margin-left: -25%;
+}
+.lines .line:nth-child(1)::after {
+-webkit-animation-delay: 2s;
+        animation-delay: 2s;
+}
+.lines .line:nth-child(3) {
+margin-left: 25%;
+}
+.lines .line:nth-child(3)::after {
+-webkit-animation-delay: 2.5s;
+        animation-delay: 2.5s;
+}
+
+@-webkit-keyframes run {
+0% {
+  top: -50%;
+}
+100% {
+  top: 110%;
+}
+}
+
+@keyframes run {
+0% {
+  top: -50%;
+}
+100% {
+  top: 110%;
+}
+}
+
+
+
+
+
